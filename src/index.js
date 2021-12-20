@@ -4,6 +4,11 @@ const port = 3000;
 
 const app = express();
 
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 app.use(express.json());
 
 import ecchi from "./scrape/ecchi/index.js";
@@ -18,34 +23,34 @@ setInterval(async () => {
   await hentaibondage();
   await monstergirl();
   await rule34();
-}, 30000);
+}, 3000);
 
 app.get("/", function (req, res) {
   res.send({ hello: "world" });
 });
 
 app.get("/ecchi", function (req, res) {
-  let json = fs.readFileSync("./scrape/ecchi/database.json");
+  let json = fs.readFileSync(__dirname + "/scrape/ecchi/database.json");
   res.send(JSON.parse(json));
 });
 
 app.get("/hentai", function (req, res) {
-  let json = fs.readFileSync("./scrape/hentai/database.json");
+  let json = fs.readFileSync(__dirname + "/scrape/hentai/database.json");
   res.send(JSON.parse(json));
 });
 
 app.get("/hentaibondage", function (req, res) {
-  let json = fs.readFileSync("./scrape/hentaibondage/database.json");
+  let json = fs.readFileSync(__dirname + "/scrapehentaibondage/database.json");
   res.send(JSON.parse(json));
 });
 
 app.get("/monstergirl", function (req, res) {
-  let json = fs.readFileSync("./scrape/monstergirl/database.json");
+  let json = fs.readFileSync(__dirname + "/scrapemonstergirl/database.json");
   res.send(JSON.parse(json));
 });
 
 app.get("/rule34", function (req, res) {
-  let json = fs.readFileSync("./scrape/rule34/database.json");
+  let json = fs.readFileSync(__dirname + "/scraperule34/database.json");
   res.send(JSON.parse(json));
 });
 
