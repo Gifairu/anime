@@ -18,12 +18,12 @@ import monstergirl from "./scrape/monstergirl/index.js";
 import rule34 from "./scrape/rule34/index.js";
 
 setInterval(async () => {
-  await ecchi();
-  await hentai();
-  await hentaibondage();
-  await monstergirl();
-  await rule34();
-}, 30000);
+  ecchi();
+  hentai();
+  hentaibondage();
+  monstergirl();
+  rule34();
+}, 15000);
 
 app.get("/", function (req, res) {
   res.send({ hello: "world" });

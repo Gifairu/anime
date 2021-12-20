@@ -17,7 +17,7 @@ const monstergirl = async () => {
       channel_id: "@assdsadsad",
     };
 
-    let read_file = fs.readFileSync(__dirname + "database.json");
+    let read_file = fs.readFileSync(__dirname + "/database.json");
     let read_parse = JSON.parse(read_file);
 
     if (read_parse[0].thumbnail === data_parse[0].data.thumbnail) return;
@@ -51,12 +51,10 @@ const monstergirl = async () => {
     ];
 
     fs.writeFileSync(
-      __dirname + "database.json",
+      __dirname + "/database.json",
       JSON.stringify(read_parse, null, 4)
     );
   } catch (err) {}
 };
 
 export default monstergirl;
-
-monstergirl();
