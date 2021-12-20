@@ -40,17 +40,17 @@ app.get("/hentai", function (req, res) {
 });
 
 app.get("/hentaibondage", function (req, res) {
-  let json = fs.readFileSync(__dirname + "/scrapehentaibondage/database.json");
+  let json = fs.readFileSync(__dirname + "/scrape/hentaibondage/database.json");
   res.send(JSON.parse(json));
 });
 
 app.get("/monstergirl", function (req, res) {
-  let json = fs.readFileSync(__dirname + "/scrapemonstergirl/database.json");
+  let json = fs.readFileSync(__dirname + "/scrape/monstergirl/database.json");
   res.send(JSON.parse(json));
 });
 
 app.get("/rule34", function (req, res) {
-  let json = fs.readFileSync(__dirname + "/scraperule34/database.json");
+  let json = fs.readFileSync(__dirname + "/scrape/rule34/database.json");
   res.send(JSON.parse(json));
 });
 
