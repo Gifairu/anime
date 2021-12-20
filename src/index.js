@@ -23,7 +23,7 @@ setInterval(async () => {
   await hentaibondage();
   await monstergirl();
   await rule34();
-}, 3000);
+}, 30000);
 
 app.get("/", function (req, res) {
   res.send({ hello: "world" });
