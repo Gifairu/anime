@@ -16,6 +16,7 @@ import hentai from "./scrape/hentai/index.js";
 import hentaibondage from "./scrape/hentaibondage/index.js";
 import monstergirl from "./scrape/monstergirl/index.js";
 import rule34 from "./scrape/rule34/index.js";
+import OppaiLove from "./scrape/OppaiLove/index.js";
 
 setInterval(async () => {
   ecchi();
@@ -23,6 +24,7 @@ setInterval(async () => {
   hentaibondage();
   monstergirl();
   rule34();
+  OppaiLove();
 }, 15000);
 
 app.get("/", function (req, res) {
