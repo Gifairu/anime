@@ -16,6 +16,7 @@ import hentai from "./scrape/hentai/index.js";
 import hentaibondage from "./scrape/hentaibondage/index.js";
 import monstergirl from "./scrape/monstergirl/index.js";
 import rule34 from "./scrape/rule34/index.js";
+import oppaigif from "./scrape/oppaigif/index.js";
 import OppaiLove from "./scrape/OppaiLove/index.js";
 
 setInterval(async () => {
@@ -25,6 +26,7 @@ setInterval(async () => {
   monstergirl();
   rule34();
   OppaiLove();
+  oppaigif();
 }, 15000);
 
 app.get("/", function (req, res) {
@@ -53,6 +55,16 @@ app.get("/monstergirl", function (req, res) {
 
 app.get("/rule34", function (req, res) {
   let json = fs.readFileSync(__dirname + "/scrape/rule34/database.json");
+  res.send(JSON.parse(json));
+});
+
+app.get("/oppailove", function (req, res) {
+  let json = fs.readFileSync(__dirname + "/scrape/OppaiLove/database.json");
+  res.send(JSON.parse(json));
+});
+
+app.get("/oppaigif", function (req, res) {
+  let json = fs.readFileSync(__dirname + "/scrape/oppaigif/database.json");
   res.send(JSON.parse(json));
 });
 
