@@ -57,4 +57,4 @@ const oppaigif = async () => {
   } catch (err) {}
 };
 
-export default oppaigif();
+export default oppaigif;
