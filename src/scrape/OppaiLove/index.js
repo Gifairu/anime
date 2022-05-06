@@ -6,7 +6,7 @@ import { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const OppaiLove = async () => {
+const oppailove = async () => {
   try {
     const { body } = await got('https://www.reddit.com/r/OppaiLove/new.json');
     const body_parse = JSON.parse(body);
@@ -57,4 +57,4 @@ const OppaiLove = async () => {
   } catch (err) {}
 };
 
-export default OppaiLove();
+export default oppailove;
