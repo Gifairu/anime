@@ -17,7 +17,7 @@ import hentaibondage from "./scrape/hentaibondage/index.js";
 import monstergirl from "./scrape/monstergirl/index.js";
 import rule34 from "./scrape/rule34/index.js";
 import oppaigif from "./scrape/oppaigif/index.js";
-import OppaiLove from "./scrape/OppaiLove/index.js";
+import oppailove from "./scrape/OppaiLove/index.js";
 
 setInterval(async () => {
   ecchi();
@@ -25,7 +25,7 @@ setInterval(async () => {
   hentaibondage();
   monstergirl();
   rule34();
-  OppaiLove();
+  oppailove();
   oppaigif();
 }, 15000);
 
